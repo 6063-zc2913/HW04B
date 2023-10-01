@@ -1,12 +1,31 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  background("gold");
+  fill(0);
 }
 
-function draw() {
-  background(255);
-  fill(0);
-  rect(width / 2.5, height / 4, width / 20, height / 2);
-  rect(width - width / 2.5 - width / 20, height / 4, width / 20, height / 2);
-  rect(width / 2.5 + width / 20, height / 4 - width / 20, width - 2 * width / 2.5 - 2 * width / 20, width / 20);
-  rect(width / 2.5 + width / 20, height / 4 + height / 2, width - 2 * width / 2.5 - 2 * width / 20, width / 20);
+
+
+function mouseClicked() {
+  let x = 0; x <= width; x = x + 1;
+  fill(random(0,500),0,0);
+  stroke(0);
+  randomlength = random(5,300);
+  ellipse(mouseX, mouseY,randomlength, randomlength);
+
+}
+
+function mouseMoved(){
+  stroke(0);
+  line (mouseX, mouseY, width / 2,height / 2);
+
+}
+
+function keyPressed(){
+  if(key == "s"){
+    saveCanvas("my canvas","jpg");
+  } else if(key == "r"){
+    background("gold");
+  }
+
 }
